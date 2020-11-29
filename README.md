@@ -67,8 +67,7 @@ __USER_AGENT__ is just a name that the server will identify your bot by. It can 
 __CLIENT_ID__ and __CLIENT_SECRET__ are fround in prefs/apps.\
 __REDDIT_USER__ is your bots username.\
 __REDDIT_PASS__ is its password.\
-__DEBUG_NETWORK__ may be set to false unless any problems arise.\
-__DELETE_USER__ must be the same as REDDIT_USER
+__DEBUG_NETWORK__ may be set to false unless any problems arise.
 
 
 
@@ -79,7 +78,6 @@ CLIENT_SECRET='*****'
 REDDIT_USER='SnootyScraper'
 REDDIT_PASS='*****'
 DEBUG_NETWORK='false'
-DELETE_USER='SnootyScraper'
 ```
 
 

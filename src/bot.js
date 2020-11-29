@@ -60,7 +60,7 @@ async function handleCommand(item) {
 /* [Snoolicious Run Cycle] */
 async function run() {
     const comments =
-        await snoolicious.requester.getUser(process.env.DELETE_USER).getComments();
+        await snoolicious.requester.getUser(process.env.REDDIT_USER).getComments();
 
     for (const comment of comments) {
         await handleCommand(comment);
