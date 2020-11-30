@@ -47,7 +47,7 @@ async function handleCommand(item) {
     const Q = item.body;
     const S = item.subreddit.display_name;
     console.log(`----------------------------Delete?-------------------------------\n\n`);
-    console.log("comment in: r/"+S);
+    console.log("comment in: r/" + S);
     console.log(Q);
     const A = await askQuestion('\n\n-------------------------------------------------------------\ny/n\n> ');
     if (A) {
@@ -64,21 +64,26 @@ async function run() {
         await handleCommand(comment);
     }
 
-    const fetchMore = async () => {
-        const moreComments = await comments.fetchMore({
-            amount: 20
-        });
-        if (!moreComments) {
-            return
-        }
-        for (const comment of comments) {
-            await handleCommand(comment);
+    const fetchMore =
+        async (comments) => {
+            console.log('FETCHING MORE!')
+            const moreComments =
+                await comments.fetchMore({
+                    amount: 20
+                });
+            if (!moreComments) {
+                console.log("NO MORE!");
+                return
+            }
+            console.log('HANDLING THEM...');
+            for (const comment of comments) {
+                await handleCommand(comment);
 
+            }
+            return fetchMore(moreComments);
         }
-        return fetchMore(moreComments);
-    }
 
-    await fetchMore();
+    await fetchMore(comments);
 
     console.log(`Finished Deleting All Comments`);
 

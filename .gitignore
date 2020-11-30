@@ -6,3 +6,4 @@
 /src/data/saved.db-wal
 /src/test.js
 /.env
+/mine.env
