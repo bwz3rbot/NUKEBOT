@@ -1,6 +1,4 @@
 const dotenv = require('dotenv').config();
-const Database = require('./data/sqlite.config');
-// const db = new Database('saved');
 const colors = require('colors');
 const Snoolicious = require('./lib/Snoolicious');
 const snoolicious = new Snoolicious();
